@@ -18,7 +18,18 @@ public class AlphaNumericChooserTest {
 //        fail();
         AlphaNumericChooser.Location loc = chooser.locationFromInput("B4");
 
-        assertEquals("proper row",3, loc.getRow());
+        assertEquals("proper row",1, loc.getRow());
         assertEquals("proper column",3, loc.getColumn());
+    }
+
+    @Test (expected = InvalidLocationException.class)
+    public void choosingWrongInputNotAllowed() throws Exception {
+        chooser.locationFromInput("WRONG");
+    }
+
+    @Test (expected = InvalidLocationException.class)
+    public void choosingLargerThanMaxIsNotAllowed() throws Exception {
+        chooser.locationFromInput("B52");
+
     }
 }
