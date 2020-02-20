@@ -18,7 +18,7 @@ public class AlphaNumericChooserTest {
 //        fail();
         AlphaNumericChooser.Location loc = chooser.locationFromInput("B4");
 
-        assertEquals(1, loc.getRow());
-        assertEquals(3, loc.getColumn());
+        assertEquals("proper row",3, loc.getRow());
+        assertEquals("proper column",3, loc.getColumn());
     }
 }
