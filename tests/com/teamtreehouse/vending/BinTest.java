@@ -35,10 +35,18 @@ public class BinTest {
         assertNull(bin.getItemName());
     }
 
+    @Test
     public void overstockingNotAllowed() throws Exception {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("There are only 10 spots left");
         bin.restock("Fritos", 2600,100,50);
+    }
+
+    @Test
+    public void constructingLargerThanAlphabetNotAllowed() throws Exception{
+        new AlphaNumericChooser(27,10);
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Too many rows");
     }
 
 }
