@@ -27,9 +27,5 @@ public class AlphaNumericChooserTest {
         chooser.locationFromInput("WRONG");
     }
 
-    @Test (expected = InvalidLocationException.class)
-    public void choosingLargerThanMaxIsNotAllowed() throws Exception {
-        chooser.locationFromInput("B52");
 
-    }
 }
